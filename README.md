@@ -74,20 +74,15 @@ The case-study markup lives inside each project's `<details>` element in `index.
 
 The visible contact section uses the supplied university email, LinkedIn, and the GitHub account from the requested repository. The downloadable original resume also contains the supplied phone number.
 
-## Publishing on GitHub Pages
+## GitHub Pages
 
-The site is ready for static hosting at the repository root. All local paths are relative, so it works under `/portfolio_kenoi/` as well as a custom domain. This implementation does not automatically deploy or change repository settings.
+Public portfolio: [sarukeigo.github.io/portfolio_kenoi](https://sarukeigo.github.io/portfolio_kenoi/)
 
-After reviewing and pushing the finished files:
+GitHub Pages deploys from the `main` branch and `/ (root)`, with HTTPS enforced. Updates committed to `main` trigger a new deployment. The `.nojekyll` file keeps the site as plain static HTML, CSS, JavaScript, and assets.
 
-1. In the GitHub repository, open **Settings → Pages**.
-2. Choose **Deploy from a branch**.
-3. Choose the branch containing these files (normally `main`) and **/ (root)**.
-4. Save and use the URL GitHub reports when deployment finishes.
+The canonical URL and Open Graph URLs use the public Pages address, including an absolute URL for the headshot preview image. Update them if the domain changes. Page links and assets remain relative so they also work in the local preview.
 
-See [GitHub’s publishing source documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site) for the official setup steps.
-
-For production social sharing, set `og:image` to an absolute image URL on the final domain and add a canonical URL and `og:url` once that domain is chosen. The site has no analytics, third-party fonts, tracking scripts, or contact-form backend.
+The site has no analytics, third-party fonts, tracking scripts, or contact-form backend.
 
 ## Accessibility and maintenance
 
