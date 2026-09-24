@@ -1,5 +1,6 @@
 // English source copy is the key. Use the supplied Japanese name; preserve other names and tool brands.
-const japaneseName = 'サルヴァドル  希之唯';
+const japaneseNameParts = ['サルヴァドル', '希之唯'];
+const japaneseName = japaneseNameParts.join('\u3000');
 const japaneseCopy = {
   'Kenoi Salvador': japaneseName,
   'Kenoi Salvador:': `${japaneseName}：`,
@@ -380,11 +381,14 @@ const portfolioI18n = (() => {
   const status = document.getElementById('language-status');
   const originalTitle = document.title;
   let language = 'en';
+  const nameEntries = [...document.querySelectorAll('[data-personal-name]')].map(element => ({
+    element, source: element.textContent
+  }));
   const textEntries = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   while (walker.nextNode()) {
     const node = walker.currentNode;
-    if (node.parentElement.closest('script, style, [translate="no"], #language-toggle, #language-status')) continue;
+    if (node.parentElement.closest('script, style, [translate="no"], [data-personal-name], #language-toggle, #language-status')) continue;
     const source = node.textContent;
     if (Object.hasOwn(japaneseCopy, source.trim())) textEntries.push({ node, source, key: source.trim() });
   }
@@ -403,6 +407,21 @@ const portfolioI18n = (() => {
     document.documentElement.lang = language;
     document.title = t(originalTitle);
     document.querySelector('meta[property="og:locale"]').content = language === 'ja' ? 'ja_JP' : 'en_US';
+    // Each name is an unbreakable unit; a full-width space separates the two.
+    for (const { element, source } of nameEntries) {
+      if (language === 'en') {
+        element.textContent = source;
+        continue;
+      }
+      const parts = japaneseNameParts.map(part => {
+        const span = document.createElement('span');
+        span.className = 'personal-name-part';
+        span.textContent = part;
+        return span;
+      });
+      if (source.endsWith(':')) parts[1].append('：');
+      element.replaceChildren(parts[0], document.createTextNode('\u3000'), parts[1]);
+    }
     for (const { node, source, key } of textEntries) node.textContent = source.replace(key, t(key));
     for (const { element, name, source } of attributeEntries) element.setAttribute(name, t(source));
     toggle.setAttribute('aria-checked', String(language === 'ja'));

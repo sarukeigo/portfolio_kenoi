@@ -2463,6 +2463,14 @@ html[lang="ja"] :is(h1,h2,h3,h4) {
   overflow-wrap:anywhere;
 }
 
+/* Allow name wrapping only between the surname and given name. */
+.personal-name-part {
+  display:inline-block;
+  white-space:nowrap;
+  word-break:normal;
+  overflow-wrap:normal;
+}
+
 html[lang="ja"] h1 {
   font-size:clamp(38px,4.5vw,62px);
   line-height:1.35;
