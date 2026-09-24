@@ -425,17 +425,6 @@ h1 {
   font-weight:600;
 }
 
-.portrait-orbit {
-  position:absolute;
-  bottom:9px;
-  right:-22px;
-  font-family:var(--serif);
-  font-size:100px;
-  line-height:1;
-  color:var(--accent);
-  transform:rotate(12deg);
-  pointer-events:none;
-}
 
 .focus-strip {
   grid-column:1/-1;
@@ -1834,11 +1823,6 @@ dialog.is-case-study {
     flex-direction:column;
     gap:0;
   }
-  .portrait-orbit {
-    font-size:75px;
-    right:-8px;
-    bottom:22px;
-  }
   .focus-strip {
     margin-top:40px;
     flex-wrap:wrap;
@@ -2057,11 +2041,6 @@ dialog.is-case-study {
     flex-direction:row;
     gap:8px;
     padding-top:12px;
-  }
-  .portrait-orbit {
-    font-size:77px;
-    right:-9px;
-    bottom:3px;
   }
   .focus-strip {
     display:grid;
@@ -2348,11 +2327,6 @@ dialog.is-case-study {
     border:1px solid rgb(168 205 188 / 26%);
     border-bottom-right-radius:55px;
   }
-  .portrait-orbit {
-    font-size:72px;
-    right:-15px;
-    bottom:25px;
-  }
 }
 
 @media(max-width:800px) {
@@ -2568,7 +2542,7 @@ html[lang="ja"] .hero-actions {
     grid-template-columns:1fr 160px;
     gap:20px;
   }
-  .hero-portrait figcaption,.portrait-orbit {
+  .hero-portrait figcaption {
     display:none;
   }
   .portrait-frame {

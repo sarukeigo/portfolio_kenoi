@@ -35,7 +35,8 @@ Open `http://localhost:8080`. Stop the server with `Ctrl+C`.
 | `assets/hsgc/` | User-supplied Callisto-Sat patch (circular CSS crop), Artemis Kit CAD, and SatNOGs COMMs radio image |
 | `assets/kenoi-salvador-resume.pdf` | Original supplied resume, available to view and download |
 | `assets/publications/ssc26-raiii-07-neutron-2.pdf` | Original supplied Neutron-2 conference paper, linked from Publications |
-| `assets/*.svg` | Original conceptual project illustrations and favicon |
+| `assets/*.svg` | Original conceptual project illustrations and Sato-kun favicon |
+| `assets/satokun-icon*.png`, `assets/favicon.ico`, `assets/apple-touch-icon.png` | Circular Sato-kun tab and Apple touch icons |
 
 When updating a project, edit its summary and no-JavaScript details in `index.html` and its expanded content in `script.js`. Neutron-2 and AERIS use the supplied mission patches with circular and pentagonal CSS crops. Their source PNGs remain unchanged. The UH AIAA patch is copied from `image/branch-logo.png` in the existing AIAA website project and retains its transparent background and original colors. AIAA highlights student branch leadership and outreach.
 
@@ -99,3 +100,5 @@ The site has no analytics, third-party fonts, tracking scripts, or contact-form 
 1. Confirm degree name, anticipated graduation date, and current role dates.
 2. Add approved project photos or CAD renders and specific individual deliverables.
 3. Expand mission case studies with requirements, design tradeoffs, validation evidence, and measurable results.
+
+The portrait has no decorative star overlay. The browser icons use a circular Sato-kun image prepared with the built-in image editor from the supplied mascot portrait, then resized for PNG, ICO, and Apple touch formats. The source portrait in the AIAA case study is unchanged. Icon preparation prompt: crop the supplied photograph to a transparent circle, preserving the character, face, helmet, AIAA lettering, and red shirt, with no added elements.
